@@ -1,0 +1,17 @@
+.w3-input{
+	margin: 5px !important;
+	text-indent: 5px;
+}
+
+#signupForm {
+    position:fixed;
+    top: 50%;
+    left: 50%;
+    width:30em;
+    height:18em;
+    border: 1px solid #ccc;
+    background-color: #f3f3f3;
+    font-size: 20px;
+    transform: translate(-50%, -50%);
+    display: none;
+}

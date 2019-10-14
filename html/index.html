@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login</title>
+	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans" />
+	<link rel="stylesheet" type="text/css" href = "../css/style.css">
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/7.2.0/firebase-app.js"></script>
+	
+</head>
+<style>
+	*{
+		margin: 0px;
+		padding: 0px;
+		font-family: Open Sans;
+		z-index: 1;
+	}
+</style>
+<body>
+	<div style="position: absolute;" id="A">
+		<form class="w3-container" id= "loginForm" action="#" method="post" style="border: 1px solid black; margin-top: 50px; margin-left: 100px; width: 500px; padding: 10px; font-size: 20px">
+			<div>
+				<label for="name">Username</label>
+				<input class="w3-input" type="text" name="username" id="username" placeholder="enter your username" required onclick="hidemss()" />
+			</div>
+			<div>
+				<label for="name">Password</label>
+				<input class="w3-input" type="password" name="pass" id="pass" placeholder="enter your password" required onclick="hidemss()"/>
+			</div>
+			<div>
+				<input id="btn-sub" type="submit" class="w3-button w3-green" value="SIGN IN" />
+				<span id="log_false" style="display: none; margin-left: 30px">You can log in after: <span id="count">0</span> <span> seconds</span></span>
+			</div>
+			<div><a href="#" id="sign-up1">Sign-up with google</a></div>
+			<div id="mss"></div>
+		</form>
+	</div>
+	<div id="C" style="position: absolute; width: 100%; height: 100%; z-index: -1">
+		<div id="B">
+		<form class="w3-container" id= "signupForm" action="#" method="post">	
+			<div>
+				<label for="name">Username</label>
+				<input class="w3-input" type="text" name="username-s" id="username-s" placeholder="enter your username" required onclick="hidemss()" />
+			</div>
+			<div>
+				<label for="name">Password</label>
+				<input class="w3-input" type="password" name="pass-s" id="pass-s" placeholder="enter your password" required onclick="hidemss()"/>
+			</div>
+			<div>
+				<input id="btn-sub" type="submit" class="w3-button w3-green" value="SIGN UP" />
+				<span id="log_false" style="display: none; margin-left: 30px">You can log in after: <span id="count">0</span> <span> seconds</span></span>
+			</div>
+		</form>
+	</div>
+	</div>
+	
+</body>
+<script src="../js/app.js"></script>
+</html>
