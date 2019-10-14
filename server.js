@@ -7,6 +7,7 @@ var firebase = require("firebase/app");
 app.use(bodyParser.json())
 // Add the Firebase products that you want to use
 require("firebase/auth");
+var provider = new firebase.auth.GoogleAuthProvider();
 
 var firebaseConfig = {
     apiKey: "AIzaSyDYskwSpGEYoLvAUbFJ7Suqpsj1p6BgPqE",
@@ -42,3 +43,19 @@ app.post('/login', function (req, res) {
 	  res.end();
 	});
 });
+app.post('/signup', function (req, res) {
+	var email = req.body.username;
+	var password = req.body.password;
+	firebase.auth().createUserWithEmailAndPassword(email, password)
+	.then(function(firebaseUser) {
+		 console.log(firebaseUser.user);
+		 res.json(JSON.stringify(firebaseUser.user));
+		 res.end();
+	  })
+	.catch(function(error) {
+		console.log(error);
+		res.json(JSON.stringify(error));
+		res.end();
+	  });
+});
+

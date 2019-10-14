@@ -15,3 +15,12 @@
     transform: translate(-50%, -50%);
     display: none;
 }
+
+#mss{
+    margin-left: 10px !important;
+}
+
+#mask{
+    background: white;
+    opacity: 0.3;
+}

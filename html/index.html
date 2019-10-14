@@ -7,54 +7,55 @@
 	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	<script src="https://www.gstatic.com/firebasejs/7.2.0/firebase-app.js"></script>
-	
+	<script src="https://www.gstatic.com/firebasejs/7.2.0/firebase-analytics.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/7.2.0/firebase-auth.js"></script>
 </head>
 <style>
 	*{
 		margin: 0px;
 		padding: 0px;
 		font-family: Open Sans;
-		z-index: 1;
 	}
 </style>
 <body>
-	<div style="position: absolute;" id="A">
-		<form class="w3-container" id= "loginForm" action="#" method="post" style="border: 1px solid black; margin-top: 50px; margin-left: 100px; width: 500px; padding: 10px; font-size: 20px">
+	<div id="mask" style="width: 100%; height: 100%; position: fixed; top: 0; left: 0; z-index: -1;"></div>
+	<div id="A" style="z-index : 0;position: relative;">
+		<form class="w3-container" id= "loginForm" action="#" method="post" style="border: 1px solid black; margin-top: 50px; margin-left: 100px; width: 500px !important; padding: 10px; font-size: 20px;">
 			<div>
 				<label for="name">Username</label>
-				<input class="w3-input" type="text" name="username" id="username" placeholder="enter your username" required onclick="hidemss()" />
+				<input class="w3-input" type="text" name="username" id="username" placeholder="enter your username" autocomplete ="current-username" required onclick="hidemss()" />
 			</div>
 			<div>
 				<label for="name">Password</label>
-				<input class="w3-input" type="password" name="pass" id="pass" placeholder="enter your password" required onclick="hidemss()"/>
+				<input class="w3-input" type="password" name="pass" id="pass" placeholder="enter your password" autocomplete ="current-password" required onclick="hidemss()"/>
 			</div>
 			<div>
 				<input id="btn-sub" type="submit" class="w3-button w3-green" value="SIGN IN" />
 				<span id="log_false" style="display: none; margin-left: 30px">You can log in after: <span id="count">0</span> <span> seconds</span></span>
 			</div>
-			<div><a href="#" id="sign-up1">Sign-up with google</a></div>
-			<div id="mss"></div>
+			<div>
+				<a href="#" id="sign-up1">Sign-up</a>
+				<p><a href id="google" style="cursor: pointer;">Sign-in with Google</a></p>
+			</div>
+			<div id="mss" style="width: 100%;"></div>
 		</form>
 	</div>
-	<div id="C" style="position: absolute; width: 100%; height: 100%; z-index: -1">
-		<div id="B">
-		<form class="w3-container" id= "signupForm" action="#" method="post">	
+	<div id="B" style="z-index: -2; ">
+		<form class="w3-container" id= "signupForm" action="#" method="post" style="display: inline-block;opacity: 0;">	
 			<div>
 				<label for="name">Username</label>
-				<input class="w3-input" type="text" name="username-s" id="username-s" placeholder="enter your username" required onclick="hidemss()" />
+				<input class="w3-input" type="text" name="username-s" id="username-s" placeholder="choose your username" autocomplete ="current-username" required onclick="hideerrormss()" />
 			</div>
 			<div>
 				<label for="name">Password</label>
-				<input class="w3-input" type="password" name="pass-s" id="pass-s" placeholder="enter your password" required onclick="hidemss()"/>
+				<input class="w3-input" type="password" name="pass-s" id="pass-s" placeholder="choose your password"  autocomplete ="current-password" required onclick="hideerrormss()"/>
 			</div>
 			<div>
-				<input id="btn-sub" type="submit" class="w3-button w3-green" value="SIGN UP" />
-				<span id="log_false" style="display: none; margin-left: 30px">You can log in after: <span id="count">0</span> <span> seconds</span></span>
+				<input id="btn-sub2" type="submit" class="w3-button w3-green" value="SIGN UP" />
 			</div>
+			<div id="errormss" style="width: 100%;"></div>
 		</form>
-	</div>
-	</div>
-	
+	</div>	
 </body>
 <script src="../js/app.js"></script>
 </html>
